@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Add = () => {
 
-  const [name,setName] = useState('')
+  const [name,setName] = useState('0')
   const [price,setPrice] = useState('')
   const [company,setCompany] = useState('')
   const navigate = useNavigate()
