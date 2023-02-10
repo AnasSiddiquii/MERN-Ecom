@@ -10,7 +10,7 @@ const Add = () => {
 
   const submit = async () => {
     if(name && price && company){
-      let result = await fetch('http://localhost:5000/add',{
+      let result = await fetch('http://localhost:5001/add',{
         method:'post',
         body:JSON.stringify({name,price,company}),
         headers:{'Content-Type':'application/json'}

@@ -17,7 +17,7 @@ const Signup = () => {
 
   const submit = async () => {
     if (name && email && password){
-      let result = await fetch('http://localhost:5000/login',{
+      let result = await fetch('http://localhost:5001/login',{
         method:'post',
         body:JSON.stringify({email,password}),
         headers:{'Content-Type':'application/json'}
@@ -27,7 +27,7 @@ const Signup = () => {
         alert('user already exists')
       }
       else{
-        let result = await fetch('http://localhost:5000/signup',{
+        let result = await fetch('http://localhost:5001/signup',{
         method:'post',
         body:JSON.stringify({name,email,password}),
         headers:{'Content-Type':'application/json'}

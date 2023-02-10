@@ -11,10 +11,11 @@ const Update = () => {
 
   useEffect(()=>{
     getProduct()
+    // eslint-disable-next-line
   },[])
 
   const getProduct = async () => {
-    let result = await fetch(`http://localhost:5000/edit/${params.id}`)
+    let result = await fetch(`http://localhost:5001/edit/${params.id}`)
     result = await result.json()
     console.log(result)
     setName(result.name)
@@ -24,7 +25,7 @@ const Update = () => {
 
   const submit = async () => {
     if(name && price && company){
-      let result = await fetch(`http://localhost:5000/edit/${params.id}`,{
+      let result = await fetch(`http://localhost:5001/edit/${params.id}`,{
         method:'put',
         body:JSON.stringify({name,price,company}),
         headers:{'Content-Type':'application/json'}

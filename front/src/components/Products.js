@@ -10,7 +10,7 @@ const Products = () => {
   },[])
 
   const getProduct = async () => {
-    let result = await fetch('http://localhost:5000/products')
+    let result = await fetch('http://localhost:5001/products')
     result = await result.json()
     if(result){
       setProduct(result)
@@ -18,7 +18,7 @@ const Products = () => {
   }
 
   const remove = async (id) => {
-    let result = await fetch(`http://localhost:5000/remove/${id}`,{
+    let result = await fetch(`http://localhost:5001/remove/${id}`,{
       method:'delete'
     })
     result = await result.json()
@@ -30,7 +30,7 @@ const Products = () => {
   const search = async(e) => {
     let key = e.target.value
     if(key){
-      let result = await fetch(`http://localhost:5000/search/${key}`)
+      let result = await fetch(`http://localhost:5001/search/${key}`)
       result = await result.json()
       if(result){
         setProduct(result)
